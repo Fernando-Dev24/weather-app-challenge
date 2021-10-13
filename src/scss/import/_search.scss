@@ -1,0 +1,82 @@
+.search {
+   position: relative;
+   width: 100%;
+   background: $primary;
+
+   /* Search form */
+   .search__form {
+      display: flex;
+      justify-content: center;
+      padding: 5.5625rem 2.9375rem 1.5625rem; /* 89px 47px 50px */
+      input {
+         margin-right: 0.75rem; /* 12px */
+         padding: 0.9375rem 1.25rem; /* 15px 20px */
+         font-family: 'Raleway', sans-serif;
+         font-size: 1rem; /* 16px */
+         font-weight: 500;
+         border: 1px solid rgba($color: $light, $alpha: .9);
+         outline: none;
+         color: $light;
+         background: transparent;
+         &::placeholder {
+            color: rgba($color: $light, $alpha: .5);
+         }
+      }
+   }
+
+   /* Default Search Options */
+   .default__search {
+      width: 85%;
+      margin: 0 auto;
+      .option {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin: 25px 0; /* 25px 0 */
+         padding: 1.4375rem; /* 23px */
+         font-weight: 500;
+         border: 1px solid transparent;
+         color: $light;
+         cursor: pointer;
+         transition: .3s all ease;
+         z-index: 10;
+         p, span {pointer-events: none;}
+         span {
+            font-size: 1.25rem; /* 20px */
+            visibility: hidden;
+         }
+         &:hover {
+            border-color: rgba($color: $light, $alpha: .5);
+            span {visibility: visible;}
+         }
+      }
+   }
+
+   .icon--corner {
+      position: absolute;
+      top: 3%;
+      right: 5%;
+      font-size: 1.875rem; /* 30px */
+      color: $light;
+      cursor: pointer;
+   }
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+   .search {
+      .search__form {
+         input{width: 100%;}
+      }
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .search {
+      .search__form {
+         flex-direction: column;
+         padding: 5.5625rem 0.625rem 1.5625rem; /* 89px 10px 50px */
+         input {margin: 0 0 0.625rem 0; /* 0 0 10px 0 */}
+      }
+   }
+}
